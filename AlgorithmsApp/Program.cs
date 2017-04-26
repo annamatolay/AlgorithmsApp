@@ -14,36 +14,52 @@ namespace AlgorithmsApp
             {
                 Console.WriteLine("Give a correct operation name, please!");
                 var op = Console.ReadLine();
-                switch (op)
+                try
                 {
-                    case "q":
-                        Environment.Exit(0);
-                        break;
-                    case "clear":
-                        Console.Clear();
-                        Main(args);
-                        break;
-                    case "bubble":
-                        Console.WriteLine("Give an array size:");
-                        RunSort(Bubble.Sorting(GetArray(Convert.ToInt32(Console.ReadLine()))));
-                        break;
-                    case "quick":
-                        Console.WriteLine("Give an array size:");
-                        RunSort(Quick.Sorting(GetArray(Convert.ToInt32(Console.ReadLine()))));
-                        break;
-                    case "merge":
-                        Console.WriteLine("Give an array size:");
-                        RunSort(Merge.Sorting(GetArray(Convert.ToInt32(Console.ReadLine()))));
-                        break;
-                    case "search":
-                        Console.WriteLine("Give an array size:");
-                        var arr = GetArray(Convert.ToInt32(Console.ReadLine()), true);
-                        Console.WriteLine("Give a target:");
-                        Console.WriteLine(Binary.Search(arr, Convert.ToInt32(Console.ReadLine()), 0, arr.Length-1));
-                        break;
-                    default:
-                        Console.WriteLine("Invalid operation!");
-                        break;
+                    switch (op)
+                    {
+                        case "q":
+                            Environment.Exit(0);
+                            break;
+                        case "clear":
+                            Console.Clear();
+                            Main(args);
+                            break;
+                        case "bubble":
+                            Console.WriteLine("Give an array size:");
+                            RunSort(Bubble.Sorting(GetArray(Convert.ToInt32(Console.ReadLine()))));
+                            break;
+                        case "quick":
+                            Console.WriteLine("Give an array size:");
+                            RunSort(Quick.Sorting(GetArray(Convert.ToInt32(Console.ReadLine()))));
+                            break;
+                        case "merge":
+                            Console.WriteLine("Give an array size:");
+                            RunSort(Merge.Sorting(GetArray(Convert.ToInt32(Console.ReadLine()))));
+                            break;
+                        case "search":
+                            Console.WriteLine("Give an array size:");
+                            var arr = GetArray(Convert.ToInt32(Console.ReadLine()), true);
+                            Console.WriteLine("Give a target:");
+                            Console.WriteLine(
+                                Binary.Search(arr, Convert.ToInt32(Console.ReadLine()), 0, arr.Length - 1));
+                            break;
+                        default:
+                            Console.WriteLine("Invalid operation!");
+                            break;
+                    }
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine("Invalid input!");
+                }
+                catch (NullReferenceException)
+                {
+                    Console.WriteLine("Invalid array size! (Choose 2 or more)");
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
                 }
             }
         }
@@ -55,6 +71,8 @@ namespace AlgorithmsApp
 
         private static int[] GetArray(int size, bool ordered = false)
         {
+            if (size < 2) {return null;}
+
             var array = new int[size];
             var random = new Random();
             if (ordered)
