@@ -7,7 +7,7 @@ namespace AlgorithmsApp
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Welcome! {0} BubbleSort - bubble {0} QuickSort - quick {0} Exit is q", Environment.NewLine);
+            Console.WriteLine("Welcome! {0} BubbleSort - bubble {0} QuickSort - quick {0} Exit is q {0} MergeSort - merge", Environment.NewLine);
 //            while(true)
             for(;;)
             {
@@ -29,6 +29,10 @@ namespace AlgorithmsApp
                     case "quick":
                         Console.WriteLine("Give an array size:");
                         RunSort(Quick.Sorting(GetRandomArray(Convert.ToInt32(Console.ReadLine()))));
+                        break;
+                    case "merge":
+                        Console.WriteLine("Give an array size:");
+                        RunSort(Merge.Sorting(GetRandomArray(Convert.ToInt32(Console.ReadLine()))));
                         break;
                     default:
                         Console.WriteLine("Invalid operation!");

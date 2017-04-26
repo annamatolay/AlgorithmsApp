@@ -43,7 +43,9 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="searching\Binary.cs" />
     <Compile Include="sorting\Bubble.cs" />
+    <Compile Include="sorting\Merge.cs" />
     <Compile Include="sorting\Quick.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
