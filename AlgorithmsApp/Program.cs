@@ -8,7 +8,7 @@ namespace AlgorithmsApp
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Welcome! {0} BubbleSort - bubble {0} QuickSort - quick {0} Exit is q {0} MergeSort - merge", Environment.NewLine);
+            Console.WriteLine("Welcome! {0} BubbleSort - bubble {0} QuickSort - quick {0} MergeSort - merge {0} Binary Search - search {0} Exit - q", Environment.NewLine);
 //            while(true)
             for(;;)
             {

@@ -6,13 +6,11 @@
         {
             if (start > end)
                 return -1;
-            var midle = (start + end) / 2;
-            var value = array[midle];
+            var middle = (start + end) / 2;
+            var value = array[middle];
             if (value > target)
-                return Search(array, target, start, midle-1);
-            if (value < target)
-                return Search(array, target, midle + 1, end);
-            return midle;
+                return Search(array, target, start, middle-1);
+            return value < target ? Search(array, target, middle + 1, end) : middle;
         }
     }
 }
