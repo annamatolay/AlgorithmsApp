@@ -1,4 +1,5 @@
 ﻿using System;
+using AlgorithmsApp.searching;
 using AlgorithmsApp.sorting;
 
 namespace AlgorithmsApp
@@ -24,15 +25,21 @@ namespace AlgorithmsApp
                         break;
                     case "bubble":
                         Console.WriteLine("Give an array size:");
-                        RunSort(Bubble.Sorting(GetRandomArray(Convert.ToInt32(Console.ReadLine()))));
+                        RunSort(Bubble.Sorting(GetArray(Convert.ToInt32(Console.ReadLine()))));
                         break;
                     case "quick":
                         Console.WriteLine("Give an array size:");
-                        RunSort(Quick.Sorting(GetRandomArray(Convert.ToInt32(Console.ReadLine()))));
+                        RunSort(Quick.Sorting(GetArray(Convert.ToInt32(Console.ReadLine()))));
                         break;
                     case "merge":
                         Console.WriteLine("Give an array size:");
-                        RunSort(Merge.Sorting(GetRandomArray(Convert.ToInt32(Console.ReadLine()))));
+                        RunSort(Merge.Sorting(GetArray(Convert.ToInt32(Console.ReadLine()))));
+                        break;
+                    case "search":
+                        Console.WriteLine("Give an array size:");
+                        var arr = GetArray(Convert.ToInt32(Console.ReadLine()), true);
+                        Console.WriteLine("Give a target:");
+                        Console.WriteLine(Binary.Search(arr, Convert.ToInt32(Console.ReadLine()), 0, arr.Length-1));
                         break;
                     default:
                         Console.WriteLine("Invalid operation!");
@@ -46,13 +53,23 @@ namespace AlgorithmsApp
             Console.WriteLine("Output: [{0}]", string.Join(", ", res));
         }
 
-        private static int[] GetRandomArray(int size)
+        private static int[] GetArray(int size, bool ordered = false)
         {
             var array = new int[size];
             var random = new Random();
-            for (var i = 0; i < array.Length; i++)
+            if (ordered)
             {
-                array[i] = random.Next(-100, 100);
+                for (var i = 0; i < array.Length; i++)
+                {
+                    array[i] = i + 1;
+                }
+            }
+            else
+            {
+                for (var i = 0; i < array.Length; i++)
+                {
+                    array[i] = random.Next(-100, 100);
+                }
             }
             Console.WriteLine("Input: [{0}]", string.Join(", ", array));
             return array;
