@@ -16,10 +16,11 @@ namespace AlgorithmsApp.sorting
                     array[j - 1] = array[j];
                     array[j] = temp;
                     Console.WriteLine("Swap: " + array[j] + " <> " + array[j - 1] );
-                    swapCount = j;
+                    swapCount++;
                 }
+
             }
-            Console.WriteLine("Step: " + swapCount + "(number swap)");
+            Console.WriteLine("Step: " + swapCount + " (number swap)");
             return array;
         }
     }
