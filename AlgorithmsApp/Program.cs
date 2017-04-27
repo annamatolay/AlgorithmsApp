@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using AlgorithmsApp.searching;
 using AlgorithmsApp.sorting;
 
@@ -8,36 +10,52 @@ namespace AlgorithmsApp
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Welcome! {0} BubbleSort - bubble {0} QuickSort - quick {0} MergeSort - merge {0} Binary Search - search {0} Exit - q", Environment.NewLine);
+            var menu = new Dictionary<string, string>
+            {
+                {"-------","-------"},
+                {"BubbleSort -", " b"},
+                {"QuickSort -", " q"},
+                {"MergeSort -", " m"},
+                {"Binary Search -", " s"},
+                {"------","------"},
+                {"Clear -", " c"},
+                {"Exit -", " e"}
+            };
+            Console.WriteLine("Welcome to AlgorithmsApp!");
+            foreach (var item in menu)
+            {
+                Console.WriteLine(item.Key + item.Value);
+            }
 //            while(true)
             for(;;)
             {
-                Console.WriteLine("Give a correct operation name, please!");
+                Console.WriteLine("Give a correct operations, please!");
                 var op = Console.ReadLine();
                 try
                 {
                     switch (op)
                     {
-                        case "q":
+                        case "e":
                             Environment.Exit(0);
                             break;
-                        case "clear":
+                        case "c":
                             Console.Clear();
                             Main(args);
                             break;
-                        case "bubble":
+                        // ask a number, convert  to int32, get the array and do algorithm
+                        case "b":
                             Console.WriteLine("Give an array size:");
-                            RunSort(Bubble.Sorting(GetArray(Convert.ToInt32(Console.ReadLine()))));
+                            WriteConsole(Bubble.Sorting(GetArray(Convert.ToInt32(Console.ReadLine()))));
                             break;
-                        case "quick":
+                        case "q":
                             Console.WriteLine("Give an array size:");
-                            RunSort(Quick.Sorting(GetArray(Convert.ToInt32(Console.ReadLine()))));
+                            WriteConsole(Quick.Sorting(GetArray(Convert.ToInt32(Console.ReadLine()))));
                             break;
-                        case "merge":
+                        case "m":
                             Console.WriteLine("Give an array size:");
-                            RunSort(Merge.Sorting(GetArray(Convert.ToInt32(Console.ReadLine()))));
+                            WriteConsole(Merge.Sorting(GetArray(Convert.ToInt32(Console.ReadLine()))));
                             break;
-                        case "search":
+                        case "s":
                             Console.WriteLine("Give an array size:");
                             var arr = GetArray(Convert.ToInt32(Console.ReadLine()), true);
                             Console.WriteLine("Give a target:");
@@ -55,6 +73,7 @@ namespace AlgorithmsApp
                 }
                 catch (NullReferenceException)
                 {
+                    // see GetArray
                     Console.WriteLine("Invalid array size! (Choose 2 or more)");
                 }
                 catch (Exception e)
@@ -64,17 +83,11 @@ namespace AlgorithmsApp
             }
         }
 
-        private static void RunSort(int[] res)
-        {
-            Console.WriteLine("Output: [{0}]", string.Join(", ", res));
-        }
-
         private static int[] GetArray(int size, bool ordered = false)
         {
             if (size < 2) {return null;}
 
             var array = new int[size];
-            var random = new Random();
             if (ordered)
             {
                 for (var i = 0; i < array.Length; i++)
@@ -84,13 +97,19 @@ namespace AlgorithmsApp
             }
             else
             {
+                var random = new Random();
                 for (var i = 0; i < array.Length; i++)
                 {
                     array[i] = random.Next(-100, 100);
                 }
             }
-            Console.WriteLine("Input: [{0}]", string.Join(", ", array));
+            WriteConsole(array, "Input");
             return array;
+        }
+
+        private static void WriteConsole(int[] arr, string option = "Output")
+        {
+            Console.WriteLine(option + ": [{0}]", string.Join(", ", arr));
         }
 
     }
