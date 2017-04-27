@@ -85,7 +85,7 @@ namespace AlgorithmsApp
 
         private static int[] GetArray(int size, bool ordered = false)
         {
-            if (size < 2) {return null;}
+            if (size < 0) {size = 0;}
 
             var array = new int[size];
             if (ordered)
