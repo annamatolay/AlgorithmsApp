@@ -6,6 +6,7 @@ namespace AlgorithmsApp.sorting
     {
         public static int[] Sorting(int[] array)
         {
+            var watch = System.Diagnostics.Stopwatch.StartNew();
             int swapCount = 0;
             for (var i = 0; i < array.Length - 1; i++)
             {
@@ -15,12 +16,14 @@ namespace AlgorithmsApp.sorting
                     var temp = array[j - 1];
                     array[j - 1] = array[j];
                     array[j] = temp;
-                    Console.WriteLine("Swap: " + array[j] + " <> " + array[j - 1] );
+//                    Console.WriteLine("Swap: " + array[j] + " <> " + array[j - 1] );
                     swapCount++;
                 }
 
             }
             Console.WriteLine("Step: " + swapCount + " (number swap)");
+            watch.Stop();
+            Console.WriteLine(watch.ElapsedMilliseconds + " ms");
             return array;
         }
     }

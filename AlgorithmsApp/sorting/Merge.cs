@@ -1,4 +1,6 @@
-﻿namespace AlgorithmsApp.sorting
+﻿using System;
+
+namespace AlgorithmsApp.sorting
 {
     public class Merge
     {
@@ -8,10 +10,14 @@
 
         public static int[] Sorting(int[] array)
         {
+            var watch = System.Diagnostics.Stopwatch.StartNew();
             _array = array;
             _length = _array.Length;
             _helpers = new int[_length];
-            return MergeSort(0, _length - 1);
+            var output = MergeSort(0, _length - 1);
+            watch.Stop();
+            Console.WriteLine(watch.ElapsedMilliseconds + " ms");
+            return output;
         }
 
         private static int[] MergeSort(int low, int high)

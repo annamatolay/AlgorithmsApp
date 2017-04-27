@@ -49,7 +49,12 @@ namespace AlgorithmsApp
                             break;
                         case "q":
                             Console.WriteLine("Give an array size:");
-                            WriteConsole(Quick.Sorting(GetArray(Convert.ToInt32(Console.ReadLine()))));
+                            var s = Console.ReadLine();
+                            var a = GetArray(Convert.ToInt32(s));
+                            var watch = System.Diagnostics.Stopwatch.StartNew();
+                            WriteConsole(Quick.Sorting(a));
+                            watch.Stop();
+                            Console.WriteLine(watch.ElapsedMilliseconds + " ms");
                             break;
                         case "m":
                             Console.WriteLine("Give an array size:");
