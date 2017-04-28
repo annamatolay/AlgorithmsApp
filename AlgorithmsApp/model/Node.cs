@@ -5,12 +5,12 @@ namespace AlgorithmsApp
     public class Node<T>
     {
         private T _data;
-        private Node<T>[] _neig;
+        private Node<T>[] _neighbours;
 
-        public Node(T data, Node<T>[] neigh = null)
+        public Node(T data, Node<T>[] neighbours = null)
         {
             _data = data;
-            _neig = neigh;
+            _neighbours = neighbours;
         }
         public T Data
         {
@@ -18,10 +18,10 @@ namespace AlgorithmsApp
             set { _data = value; }
         }
 
-        public Node<T>[] Neig
+        public Node<T>[] Neighbours
         {
-            get { return _neig; }
-            set { _neig = value; }
+            get { return _neighbours; }
+            set { _neighbours = value; }
         }
     }
 }
