@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using AlgorithmsApp.searching;
 using AlgorithmsApp.sorting;
 
@@ -49,8 +50,8 @@ namespace AlgorithmsApp
                             break;
                         case "q":
                             Console.WriteLine("Give an array size:");
-                            var s = Console.ReadLine();
-                            var a = GetArray(Convert.ToInt32(s));
+                            var a = GetArray(Convert.ToInt32(Console.ReadLine()));
+//                            Stopwatch is here due TraceOptions the recursivity of the method
                             var watch = System.Diagnostics.Stopwatch.StartNew();
                             WriteConsole(Quick.Sorting(a));
                             watch.Stop();
