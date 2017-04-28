@@ -9,3 +9,14 @@ C:\Users\Palko\RiderProjects\AlgorithmsApp\AlgorithmsApp\bin\Debug\normnfkd.nlp
 C:\Users\Palko\RiderProjects\AlgorithmsApp\AlgorithmsApp\obj\Debug\AlgorithmsApp.csprojResolveAssemblyReference.cache
 C:\Users\Palko\RiderProjects\AlgorithmsApp\AlgorithmsApp\obj\Debug\AlgorithmsApp.exe
 C:\Users\Palko\RiderProjects\AlgorithmsApp\AlgorithmsApp\obj\Debug\AlgorithmsApp.pdb
+C:\Users\MiluLaci\codecool\csharp\AlgorithmsApp\AlgorithmsApp\obj\Debug\AlgorithmsApp.csprojResolveAssemblyReference.cache
+C:\Users\MiluLaci\codecool\csharp\AlgorithmsApp\AlgorithmsApp\obj\Debug\AlgorithmsApp.exe
+C:\Users\MiluLaci\codecool\csharp\AlgorithmsApp\AlgorithmsApp\obj\Debug\AlgorithmsApp.pdb
+C:\Users\MiluLaci\codecool\csharp\AlgorithmsApp\AlgorithmsApp\bin\Debug\AlgorithmsApp.exe
+C:\Users\MiluLaci\codecool\csharp\AlgorithmsApp\AlgorithmsApp\bin\Debug\AlgorithmsApp.pdb
+C:\Users\MiluLaci\codecool\csharp\AlgorithmsApp\AlgorithmsApp\bin\Debug\mscorlib.dll
+C:\Users\MiluLaci\codecool\csharp\AlgorithmsApp\AlgorithmsApp\bin\Debug\normidna.nlp
+C:\Users\MiluLaci\codecool\csharp\AlgorithmsApp\AlgorithmsApp\bin\Debug\normnfc.nlp
+C:\Users\MiluLaci\codecool\csharp\AlgorithmsApp\AlgorithmsApp\bin\Debug\normnfd.nlp
+C:\Users\MiluLaci\codecool\csharp\AlgorithmsApp\AlgorithmsApp\bin\Debug\normnfkc.nlp
+C:\Users\MiluLaci\codecool\csharp\AlgorithmsApp\AlgorithmsApp\bin\Debug\normnfkd.nlp

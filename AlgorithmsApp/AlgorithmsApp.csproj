@@ -41,7 +41,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="model\Graph.cs" />
     <Compile Include="model\Node.cs" />
     <Compile Include="model\Tree.cs" />
     <Compile Include="Program.cs" />
